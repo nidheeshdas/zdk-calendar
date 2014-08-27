@@ -7,7 +7,7 @@
 	<link href="/css/font.css" rel="stylesheet">
 	<script src="../platform/platform.js"></script>
 	<link rel="import" href="zdk-calendar.htm">
-	
+
 	<style>
 		body {
 			font-size:16px;font-family:"Oxygen",Helvetica,Arial,sans-serif;font-weight:normal;line-height:24px
@@ -37,7 +37,7 @@
 		}
     </style>
     <style shim-shadowdom>
-		zdk-calendar.small::shadow div.head, 
+		zdk-calendar.small::shadow div.head,
 		zdk-calendar.small div.head {
 			background:#d61a7f;
 			font-weight: bold;
@@ -161,6 +161,12 @@ document.querySelector("#cal1").addEventListener('select', function(e) {
 		<option value="zh-tw">Chinese Taiwan</option>
 	</select>
 	<script>
+		document.querySelector("#cal2").data = {
+			'2014-08-17': {edit: true, report: true}
+		}
+		document.querySelector("#cal2").addEventListener('selectAction', function(e) {
+			console.log(e.detail);
+		});
 		document.querySelector("select#i18n").addEventListener("change", function(e) {
 			document.querySelector("#cal2").i18n = this.value;
 		}, false);
@@ -219,7 +225,7 @@ document.querySelector("#cal5").addEventListener('dateChange', function(e) {
     <p>Styling your calendar can be done using `shim-shadowdom` style declaration, for example to customize the mini-calendars above :</p>
     <pre><code>
     &lt;style shim-shadowdom&gt;
-		zdk-calendar.small::shadow div.head, 
+		zdk-calendar.small::shadow div.head,
 		zdk-calendar.small div.head {
 			background:#d61a7f;
 			font-weight: bold;
