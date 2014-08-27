@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "momentjs": "*",
-    "polymer": "Polymer/polymer#~0.3.5",
-    "platform": "polymer/platform#~0.3.5"
+    "polymer": "Polymer/polymer",
+    "platform": "polymer/platform"
   }
 }
